@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANNKER DEXIOTITES — Album Kenangan Kelas</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              400: '#D4AF37',
+              500: '#C5A028',
+              600: '#9B7B1B',
+            },
+            dark: {
+              900: '#0B0D10',
+              800: '#12161D',
+              700: '#1B202B',
+              600: '#282F3F',
+            }
+          },
+          fontFamily: {
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0B0D10;
+      color: #E2E8F0;
+    }
+    .font-serif-custom {
+      font-family: 'Playfair Display', serif;
+    }
+    .glass-panel {
+      background: rgba(18, 22, 29, 0.75);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.15);
+    }
+    .masonry-grid {
+      column-count: 1;
+      column-gap: 1.5rem;
+    }
+    @media (min-width: 640px) {
+      .masonry-grid { column-count: 2; }
+    }
+    @media (min-width: 1024px) {
+      .masonry-grid { column-count: 3; }
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-gray-200 antialiased selection:bg-gold-500 selection:text-black">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo Kelas -->
+      <a href="#home" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full border border-gold-400 flex items-center justify-center text-gold-400 font-serif-custom text-xl tracking-wider group-hover:bg-gold-400 group-hover:text-black transition duration-300">
+          AD
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif-custom text-base sm:text-lg font-bold tracking-widest text-white">ANNKER DEXIOTITES</span>
+          <span class="text-[9px] uppercase tracking-[0.3em] text-gold-400 font-medium">ALBUM KELAS RESMI</span>
+        </div>
+      </a>
+
+      <!-- Menu Navigasi Desktop -->
+      <nav class="hidden lg:flex items-center gap-7 text-xs tracking-wider uppercase font-medium">
+        <a href="#home" class="hover:text-gold-400 transition text-gold-400">Beranda</a>
+        <a href="#teachers" class="hover:text-gold-400 transition text-gray-300">Wali Kelas</a>
+        <a href="#gallery" class="hover:text-gold-400 transition text-gray-300">Galeri Album</a>
+        <a href="#about" class="hover:text-gold-400 transition text-gray-300">Tentang Kami</a>
+      </nav>
+
+      <!-- Tombol CTA -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#gallery" class="px-5 py-2.5 rounded-full border border-gold-400 text-gold-400 text-xs font-semibold uppercase tracking-widest hover:bg-gold-400 hover:text-black transition duration-300 shadow-lg shadow-gold-500/10">
+          Jelajahi Foto
+        </a>
+      </div>
+
+      <!-- Tombol Menu Mobile -->
+      <button id="mobileMenuBtn" class="lg:hidden text-gray-300 hover:text-white p-2">
+        <i data-feather="menu"></i>
+      </button>
+    </div>
+
+    <!-- Dropdown Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10 bg-dark-800 px-6 py-6 space-y-4">
+      <a href="#home" class="block text-gold-400 font-medium uppercase text-xs tracking-wider">Beranda</a>
+      <a href="#teachers" class="block text-gray-300 hover:text-gold-400 uppercase text-xs tracking-wider">Wali Kelas</a>
+      <a href="#gallery" class="block text-gray-300 hover:text-gold-400 uppercase text-xs tracking-wider">Galeri Album</a>
+      <a href="#about" class="block text-gray-300 hover:text-gold-400 uppercase text-xs tracking-wider">Tentang Kami</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=2000&q=80');"></div>
+    <div class="absolute inset-0 z-10 bg-gradient-to-t from-dark-900 via-dark-900/70 to-dark-900/50"></div>
+
+    <div class="relative z-20 text-center max-w-4xl px-4 mt-16">
+      <span class="inline-block px-4 py-1.5 rounded-full border border-gold-400/40 text-gold-400 text-xs font-semibold uppercase tracking-[0.3em] mb-6 bg-dark-900/50 backdrop-blur-md">
+        Angkatan Penuh Cerita & Prestasi
+      </span>
+      <h1 class="font-serif-custom text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+        ANNKER <span class="italic font-normal text-gold-400">DEXIOTITES</span>
+      </h1>
+      <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+        Selamat datang di album digital resmi kelas kami. Menyimpan setiap memori indah, kebersamaan, perjuangan keterampilan, hingga prestasi membanggakan.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#gallery" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gold-400 text-black font-semibold uppercase tracking-widest text-xs hover:bg-gold-500 transition shadow-lg shadow-gold-500/20">
+          Lihat Album Kenangan
+        </a>
+        <a href="#teachers" class="w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 hover:border-gold-400 text-white hover:text-gold-400 font-semibold uppercase tracking-widest text-xs transition backdrop-blur-sm">
+          Wali Kelas Kami
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION WALI KELAS (Pak Fajrin & Pak Ariq) -->
+  <section id="teachers" class="py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-gold-400 text-xs uppercase tracking-[0.3em] font-semibold mb-3">Pilar Pembimbing Kelas</h2>
+      <h3 class="font-serif-custom text-3xl sm:text-5xl font-bold text-white mb-6">Wali Kelas Tercinta</h3>
+      <div class="w-16 h-0.5 bg-gold-400 mx-auto mb-6"></div>
+      <p class="text-gray-400 text-sm font-light">Sosok inspiratif yang selalu membimbing, mendukung, dan membersamai setiap langkah perjalanan kami di sekolah.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      
+      <!-- Pak Fajrin -->
+      <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-gold-400/30 text-center group hover:border-gold-400 transition duration-300">
+        <div class="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-2 border-gold-400 shadow-xl">
+          <img src="assets/img/foto-pakfajrin.jpeg" alt="Pak Fajrin" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+        </div>
+        <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-1">Wali Kelas / Pembimbing Utama</span>
+        <h4 class="font-serif-custom text-2xl font-bold text-white mb-3">Bapak Fajrin, S.Pd.</h4>
+        <p class="text-gray-400 text-xs leading-relaxed font-light mb-6">
+          "Terima kasih atas segala kesabaran, nasihat bijak, dan motivasi luar biasa yang telah diberikan kepada seluruh siswa ANNKER DEXIOTITES."
+        </p>
+        <button onclick="openTeacherModal('Bapak Fajrin, S.Pd.', 'https:assets/img/foto-prestasi.jpeg', 'Wali Kelas / Pembimbing Utama')" class="px-5 py-2 rounded-full border border-white/20 text-xs font-semibold text-gray-300 hover:border-gold-400 hover:text-gold-400 transition">
+          Lihat Foto Bersama
+        </button>
+      </div>
+
+      <!-- Pak Ariq -->
+      <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-gold-400/30 text-center group hover:border-gold-400 transition duration-300">
+        <div class="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-2 border-gold-400 shadow-xl">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Pak Ariq" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+        </div>
+        <span class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-1">Wali Kelas / Pendamping Akademik</span>
+        <h4 class="font-serif-custom text-2xl font-bold text-white mb-3">Bapak Ariq, M.Pd.</h4>
+        <p class="text-gray-400 text-xs leading-relaxed font-light mb-6">
+          "Selalu menginspirasi kedisiplinan dan semangat pantang menyerah dalam menggapai cita-cita kelas ANNKER DEXIOTITES."
+        </p>
+        <button onclick="openTeacherModal('Bapak Ariq, M.Pd.', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80', 'Wali Kelas / Pendamping Akademik')" class="px-5 py-2 rounded-full border border-white/20 text-xs font-semibold text-gray-300 hover:border-gold-400 hover:text-gold-400 transition">
+          Lihat Foto Bersama
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALERI ALBUM KELAS -->
+  <section id="gallery" class="py-28 bg-dark-800 border-y border-white/10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-gold-400 text-xs uppercase tracking-[0.3em] font-semibold mb-3">Arsip Dokumentasi</h2>
+        <h3 class="font-serif-custom text-3xl sm:text-5xl font-bold text-white mb-6">Galeri Kenangan ANNKER DEXIOTITES</h3>
+        <div class="w-16 h-0.5 bg-gold-400 mx-auto mb-8"></div>
+        
+        <!-- Filter Kategori Kustom -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs font-medium uppercase tracking-wider">
+          <button onclick="filterGallery('all')" class="filter-btn active-filter px-4 py-2.5 rounded-full bg-gold-400 text-black transition">Semua Foto</button>
+          <button onclick="filterGallery('kenangan')" class="filter-btn px-4 py-2.5 rounded-full border border-white/10 text-gray-400 hover:text-white hover:border-gold-400 transition">Foto Kenangan</button>
+          <button onclick="filterGallery('prestasi')" class="filter-btn px-4 py-2.5 rounded-full border border-white/10 text-gray-400 hover:text-white hover:border-gold-400 transition">Foto Prestasi</button>
+          <button onclick="filterGallery('bersama')" class="filter-btn px-4 py-2.5 rounded-full border border-white/10 text-gray-400 hover:text-white hover:border-gold-400 transition">Foto Bersama</button>
+          <button onclick="filterGallery('classmeet')" class="filter-btn px-4 py-2.5 rounded-full border border-white/10 text-gray-400 hover:text-white hover:border-gold-400 transition">Foto Class Meet</button>
+          <button onclick="filterGallery('keterampilan')" class="filter-btn px-4 py-2.5 rounded-full border border-white/10 text-gray-400 hover:text-white hover:border-gold-400 transition">Foto Keterampilan</button>
+        </div>
+      </div>
+
+      <!-- Masonry Grid Galeri -->
+      <div class="masonry-grid" id="galleryContainer">
+        
+        <!-- 1. Foto Bersama Wali Kelas -->
+        <div class="masonry-item gallery-item group relative overflow-hidden rounded-xl border border-white/10 cursor-pointer" data-category="bersama" onclick="openLightbox(0)">
+          <img src="assets/img/foto-bersama.jpg" alt="Foto Bersama Wali Kelas" class="w-full object-cover transition duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+            <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">Foto Bersama</span>
+            <h4 class="font-serif-custom text-xl font-bold text-white mb-1">Keluarga Besar ankker</h4>
+            <p class="text-xs text-gray-300 font-light">Momen kebersamaan lengkap satu kelas</p>
+          </div>
+        </div>
+
+        <!-- 2. Foto Prestasi -->
+        <div class="masonry-item gallery-item group relative overflow-hidden rounded-xl border border-white/10 cursor-pointer" data-category="prestasi" onclick="openLightbox(1)">
+          <img src="assets/img/foto-prestasi.jpeg" alt="Foto Prestasi" class="w-full object-cover transition duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+            <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">Foto Prestasi</span>
+            <h4 class="font-serif-custom text-xl font-bold text-white mb-1">Juara Umum Lomba Antar Kelas</h4>
+            <p class="text-xs text-gray-300 font-light">Piala dan penghargaan membanggakan ANNKER DEXIOTITES</p>
+          </div>
+        </div>
+
+        <!-- 3. Foto Keterampilan -->
+        <div class="masonry-item gallery-item group relative overflow-hidden rounded-xl border border-white/10 cursor-pointer" data-category="keterampilan" onclick="openLightbox(2)">
+          <img src="assets/img/foto-keterampilan.jpg" alt="Foto Keterampilan" class="w-full object-cover transition duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+            <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">Foto Keterampilan</span>
+            <h4 class="font-serif-custom text-xl font-bold text-white mb-1">foto album bersama pebimbing keterampilan</h4>
+            <p class="text-xs text-gray-300 font-light">semangat dalam berpartisipasi itu adalah prioritas kita</p>
+          </div>
+        </div>
+
+        <!-- 4. Foto Class Meet -->
+        <div class="masonry-item gallery-item group relative overflow-hidden rounded-xl border border-white/10 cursor-pointer" data-category="classmeet" onclick="openLightbox(3)">
+          <img src="assets/img/foto-clasmet.jpeg" alt="Foto Class Meet" class="w-full object-cover transition duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+            <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">Foto Class Meet</span>
+            <h4 class="font-serif-custom text-xl font-bold text-white mb-1">Keseruan Pertandingan Class Meet</h4>
+            <p class="text-xs text-gray-300 font-light">Dukungan penuh suporter ANNKER DEXIOTITES di lapangan</p>
+          </div>
+        </div>
+
+        <!-- 5. Foto Kenangan -->
+        <div class="masonry-item gallery-item group relative overflow-hidden rounded-xl border border-white/10 cursor-pointer" data-category="kenangan" onclick="openLightbox(4)">
+          <img src="assets/img/foto-kenangan.jpg" alt="Foto Kenangan" class="w-full object-cover transition duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+            <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">Foto Kenangan</span>
+            <h4 class="font-serif-custom text-xl font-bold text-white mb-1">Canda tawa berakhir nya magang</h4>
+            <p class="text-xs text-gray-300 font-light">Momen santai penuh kehangatan persahabatan</p>
+          </div>
+        </div>
+
+        <!-- 6. Foto Di dalam kelas  -->
+        <div class="masonry-item gallery-item group relative overflow-hidden rounded-xl border border-white/10 cursor-pointer" data-category="keterampilan" onclick="openLightbox(5)">
+          <img src="assets/img/foto-terimarapot.jpeg" alt="Foto Keterampilan" class="w-full object-cover transition duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 p-6 flex flex-col justify-end">
+            <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">Foto hasil usaha</span>
+            <h4 class="font-serif-custom text-xl font-bold text-white mb-1">Penerimaan rapot</h4>
+            <p class="text-xs text-gray-300 font-light">tidak ada usaha yang tidak ada hasilnya pasti ada </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-28 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+    <h2 class="text-gold-400 text-xs uppercase tracking-[0.3em] font-semibold mb-3">Filosofi Kelas</h2>
+    <h3 class="font-serif-custom text-3xl sm:text-4xl font-bold text-white mb-6">Tentang ANNKER DEXIOTITES</h3>
+    <div class="w-16 h-0.5 bg-gold-400 mx-auto mb-8"></div>
+    <p class="text-gray-300 text-sm sm:text-base leading-relaxed font-light max-w-3xl mx-auto">
+      ANNKER DEXIOTITES bukan sekadar nama kelas, melainkan simbol persaudaraan, solidaritas tinggi, dan semangat pantang menyerah. Dibimbing oleh Pak Fajrin dan Pak Ariq, kami belajar bahwa kebersamaan adalah kunci utama dalam melewati setiap tantangan akademis maupun non-akademis.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-900 border-t border-white/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full border border-gold-400 flex items-center justify-center text-gold-400 font-serif-custom text-sm font-bold">
+            AD
+          </div>
+          <span class="font-serif-custom text-lg font-bold tracking-widest text-white">ANNKER DEXIOTITES</span>
+        </div>
+
+        <p class="text-xs text-gray-500">
+          © 2026 ANNKER DEXIOTITES Class Album. Seluruh Hak Cipta Dilindungi.
+        </p>
+
+        <div class="flex items-center gap-6 text-gray-400">
+          <a href="#" class="hover:text-gold-400 transition"><i data-feather="instagram" class="w-5 h-5"></i></a>
+          <a href="#" class="hover:text-gold-400 transition"><i data-feather="globe" class="w-5 h-5"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL LIGHTBOX FOTO -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden flex items-center justify-center p-4">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-gray-400 hover:text-white p-2 z-10">
+      <i data-feather="x" class="w-8 h-8"></i>
+    </button>
+
+    <button onclick="prevLightbox()" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-3 rounded-full bg-white/5 hover:bg-white/10">
+      <i data-feather="chevron-left" class="w-6 h-6"></i>
+    </button>
+    <button onclick="nextLightbox()" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white p-3 rounded-full bg-white/5 hover:bg-white/10">
+      <i data-feather="chevron-right" class="w-6 h-6"></i>
+    </button>
+
+    <div class="max-w-4xl w-full flex flex-col md:flex-row gap-8 items-center">
+      <div class="w-full md:w-2/3 max-h-[75vh] flex justify-center">
+        <img id="lightboxImg" src="" alt="Pratinjau Foto" class="max-h-[75vh] w-auto object-contain rounded-lg border border-white/10 shadow-2xl" />
+      </div>
+
+      <div class="w-full md:w-1/3 text-left space-y-4">
+        <div>
+          <span id="lightboxCategory" class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-1">Kategori</span>
+          <h3 id="lightboxTitle" class="font-serif-custom text-2xl font-bold text-white">Judul Foto</h3>
+        </div>
+        <p id="lightboxDesc" class="text-gray-400 text-xs leading-relaxed font-light">
+          Deskripsi memori dan kenangan kelas ANNKER DEXIOTITES.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL INFO WALI KELAS -->
+  <div id="teacherModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="glass-panel max-w-md w-full p-8 rounded-2xl border border-gold-400/30 relative text-center">
+      <button onclick="closeTeacherModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+        <i data-feather="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-2 border-gold-400">
+        <img id="modalTeacherImg" src="" alt="" class="w-full h-full object-cover" />
+      </div>
+
+      <span id="modalTeacherRole" class="text-gold-400 text-xs uppercase tracking-widest font-semibold block mb-1">Wali Kelas</span>
+      <h3 id="modalTeacherName" class="font-serif-custom text-2xl font-bold text-white mb-4">Nama Guru</h3>
+      <p class="text-gray-300 text-xs leading-relaxed mb-6">
+        Dokumentasi spesial bersama seluruh siswa ANNKER DEXIOTITES dalam bimbingan penuh kehangatan dan dedikasi.
+      </p>
+
+      <button onclick="closeTeacherModal()" class="w-full py-3 rounded-xl bg-gold-400 text-black font-semibold text-xs uppercase tracking-widest hover:bg-gold-500 transition">
+        Tutup
+      </button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Inisialisasi Icon Feather
+    feather.replace();
+
+    // Menu Mobile Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Data Galeri untuk Lightbox
+    const galleryData = [
+      {
+        src: "assets/img/foto-bersama.jpg",
+        category: "Foto Bersama",
+        title: "Keluarga Besar Bersama Pak Fajrin & Pak Ariq",
+        desc: "Momen kebersamaan lengkap satu kelas ANNKER DEXIOTITES bersama wali kelas tercinta."
+      },
+      {
+        src: "assets/img/foto-prestasi.jpg",
+        category: "Foto Prestasi",
+        title: "Juara Umum Lomba Antar Kelas",
+        desc: "Piala dan penghargaan membanggakan yang diraih berkat kerja keras seluruh anggota kelas."
+      },
+      {
+        src: "assets/img/foto-prestasi.jpg",
+        category: "Foto Keterampilan",
+        title: "Praktik Keterampilan & Kejuruan",
+        desc: "Kreativitas tinggi dan kerja sama tim saat menyelesaikan proyek keterampilan."
+      },
+      {
+        src: "assets/img/foto-prestasi.jpg",
+        category: "Foto Class Meet",
+        title: "Keseruan Pertandingan Class Meet",
+        desc: "Sorak sorai dan dukungan penuh suporter ANNKER DEXIOTITES di berbagai cabang lomba."
+      },
+      {
+        src: "assets/img/foto-kenangan.jpg",
+        category: "foto-kenangan",
+        title: "kebersamaan yang indah dan terkenang",
+        desc: "Momen santai penuh kehangatan persahabatan yang tidak terlupakan."
+      },
+      {
+        src: "assets/img/foto-keterampilan.jpg",
+        category: "Foto Keterampilan",
+        title: "foto bersma pembimbing keterampilan",
+        desc: "siswa inovatif dan hasil kerja praktik keterampilan terbaik dari kelas."
+      }
+    ];
+
+    // Filter Kategori Galeri
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-gold-400', 'text-black', 'font-semibold');
+        btn.classList.add('border', 'border-white/10', 'text-gray-400');
+      });
+
+      event.target.classList.remove('border', 'border-white/10', 'text-gray-400');
+      event.target.classList.add('bg-gold-400', 'text-black', 'font-semibold');
+
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Modal Lightbox
+    let currentLightboxIdx = 0;
+    function openLightbox(index) {
+      currentLightboxIdx = index;
+      const data = galleryData[index];
+      document.getElementById('lightboxImg').src = data.src;
+      document.getElementById('lightboxCategory').innerText = data.category;
+      document.getElementById('lightboxTitle').innerText = data.title;
+      document.getElementById('lightboxDesc').innerText = data.desc;
+
+      document.getElementById('lightboxModal').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.add('hidden');
+    }
+
+    function prevLightbox() {
+      currentLightboxIdx = (currentLightboxIdx - 1 + galleryData.length) % galleryData.length;
+      openLightbox(currentLightboxIdx);
+    }
+
+    function nextLightbox() {
+      currentLightboxIdx = (currentLightboxIdx + 1) % galleryData.length;
+      openLightbox(currentLightboxIdx);
+    }
+
+    // Modal Wali Kelas
+    function openTeacherModal(name, imgSrc, role) {
+      document.getElementById('modalTeacherName').innerText = name;
+      document.getElementById('modalTeacherImg').src = imgSrc;
+      document.getElementById('modalTeacherRole').innerText = role;
+      document.getElementById('teacherModal').classList.remove('hidden');
+    }
+
+    function closeTeacherModal() {
+      document.getElementById('teacherModal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
